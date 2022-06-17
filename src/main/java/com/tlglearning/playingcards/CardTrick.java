@@ -14,5 +14,6 @@ public class CardTrick {
         // TODO Sort each deque by color, suit, and rank, and print them out, along with the counts from
         //  previous step.
 
+
     }
 }
