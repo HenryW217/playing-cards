@@ -3,10 +3,9 @@ package com.tlglearning.playingcards;
 import com.tlglearning.playingcards.model.Card;
 import com.tlglearning.playingcards.model.Deck;
 import com.tlglearning.playingcards.model.Suit;
+import com.tlglearning.playingcards.util.DisplayComparator;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 public class CardTrick {
     private Deque<Card> blackPile;
@@ -68,6 +67,11 @@ public class CardTrick {
                 redCount++;
             }
         }
+        DisplayComparator comparator = new DisplayComparator();
+        Collections.sort((LinkedList<Card>)blackPile, comparator);
+        Collections.sort((LinkedList<Card>)redPile, comparator);
+
+
         System.out.printf("Black: count=%d, cards=%s%n", blackCount, blackPile );
         System.out.printf("Red: count=%d, cards=%s%n", redCount, redPile );
     }
